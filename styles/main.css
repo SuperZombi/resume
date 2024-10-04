@@ -9,8 +9,11 @@ body {
 	background-color: #f0f0f0;
 }
 
+:root{
+	scroll-behavior: smooth;
+}
 ::-webkit-scrollbar {
-	width: 16px;
+	width: 10px;
 }
 ::-webkit-scrollbar-track {
 	background-color: transparent;
@@ -18,8 +21,6 @@ body {
 ::-webkit-scrollbar-thumb {
 	background-color: #d6dee1;
 	border-radius: 20px;
-	border: 5px solid transparent;
-	background-clip: content-box;
 }
 ::-webkit-scrollbar-thumb:hover {
 	background-color: #a8bbbf;
@@ -29,6 +30,52 @@ hr {
 	border: 0;
 	height: 1px;
 	background-image: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.25), transparent);
+}
+
+
+@keyframes slidedown {
+	from {
+		transform: translateY(20px);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0px);
+		opacity: 1;
+	}
+}
+@keyframes slidetop {
+	from {
+		transform: translateY(-20px);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0px);
+		opacity: 1;
+	}
+}
+@keyframes slidecenter {
+	from {
+		transform: scale(0);
+		transform-origin: center;
+	}
+	to {
+		transform: scale(1);
+	}
+}
+
+
+.cards {
+	height: 100%;
+	width: 100%;
+	scroll-snap-type: y mandatory;
+	overflow: auto;
+}
+.card-wrapper {
+	height: 100dvh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	scroll-snap-align: center;
 }
 
 
@@ -47,7 +94,7 @@ hr {
 	flex-direction: column;
 	font-size: 18pt;
 }
-.card > .card-wrapper {
+.card > .card-layout {
 	display: flex;
 	flex-direction: row;
 	overflow: hidden;
@@ -76,9 +123,11 @@ hr {
 	justify-content: center;
 	gap: 0.5em;
 	flex-basis: 50%;
+	overflow: hidden;
 }
 .card hr {
 	margin: 0;
+	flex-shrink: 0;
 }
 .card .info h1 {
 	padding-top: 0.25em;
@@ -98,24 +147,35 @@ hr {
 	gap: 0.5em;
 	overflow: auto;
 }
+.card .info p::-webkit-scrollbar {
+	width: 5px;
+}
 
 
 @media (max-width: 600px) {
+	::-webkit-scrollbar {
+		width: auto;
+		max-width: 4px;
+	}
 	.card {
 		width: 95dvw;
-		max-height: 95dvh;
 		height: fit-content;
+		max-height: 95dvh;
+		overflow: hidden;
 		font-size: 16pt;
 		gap: 0.25em;
 	}
-	.card > .card-wrapper {
+	.card > .card-layout {
 		display: contents;
 	}
 	.card .profile-img {
 		order: -1;
 		max-width: 100%;
 		height: 250px;
+		flex-shrink: 0;
 		flex-basis: unset;
+		display: flex;
+		align-items: center;
 	}
 	.card .profile-img img {
 		mask-image: unset;
@@ -146,7 +206,7 @@ hr {
 	color: #333;
 	font-size: 1em;
 	text-decoration: none;
-	transition: 0.15s;
+	transition: 0.2s;
 }
 .card .info .contact-info a:hover {
 	color: #007BFF;
