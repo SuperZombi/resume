@@ -53,16 +53,13 @@ hr {
 	overflow: hidden;
 	height: 100%;
 }
-.card > .card-wrapper > * {
-	flex-basis: 50%;
-}
-
 
 .card .profile-img{
 	max-width: 50%;
 	user-select: none;
 	border-radius: 10px;
 	overflow: hidden;
+	flex-basis: 50%;
 }
 .card .profile-img img {
 	width: 100%;
@@ -78,6 +75,7 @@ hr {
 	flex-direction: column;
 	justify-content: center;
 	gap: 0.5em;
+	flex-basis: 50%;
 }
 .card hr {
 	margin: 0;
@@ -89,7 +87,7 @@ hr {
 }
 .card .info h2 {
 	font-size: 0.75em;
-	color: gray;
+	color: #757575;
 	margin: 0;
 }
 .card .info p {
@@ -106,6 +104,7 @@ hr {
 	.card {
 		width: 95dvw;
 		max-height: 95dvh;
+		height: fit-content;
 		font-size: 16pt;
 		gap: 0.25em;
 	}
@@ -115,14 +114,24 @@ hr {
 	.card .profile-img {
 		order: -1;
 		max-width: 100%;
-		min-height: 175px;
+		height: 250px;
+		flex-basis: unset;
 	}
 	.card .profile-img img {
 		mask-image: unset;
 		object-position: center;
 	}
 	.card .info {
-		height: calc(100% - 175px);
+		height: calc(100% - 250px);
+		flex-basis: unset;
+	}
+}
+
+@media (max-height: 500px) {
+	.card {
+		max-height: 95dvh;
+		width: auto;
+		max-width: 85dvw;
 	}
 }
 
