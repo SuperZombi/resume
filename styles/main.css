@@ -99,22 +99,31 @@ hr {
 	flex-direction: row;
 	overflow: hidden;
 	height: 100%;
+	gap: 10px;
 }
-
-.card .profile-img{
+.card .card-img{
 	max-width: 50%;
 	user-select: none;
-	border-radius: 10px;
-	overflow: hidden;
 	flex-basis: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
-.card .profile-img img {
-	width: 100%;
+.card .card-img img {
+	max-width: 100%;
+	max-height: 100%;
+	object-fit: contain;
+	border-radius: 10px;
+}
+
+.card #profile_img img {
 	height: 100%;
+	width: 100%;
 	mask-image: linear-gradient(90deg, transparent 5%, #000 50%);
 	object-fit: cover;
 	object-position: 75%;
 }
+
 
 
 .card .info {
@@ -168,16 +177,19 @@ hr {
 	.card > .card-layout {
 		display: contents;
 	}
-	.card .profile-img {
+	.card .card-img {
 		order: -1;
 		max-width: 100%;
-		height: 250px;
+		height: 100%;
 		flex-shrink: 0;
 		flex-basis: unset;
-		display: flex;
-		align-items: center;
 	}
-	.card .profile-img img {
+	.card #profile_img {
+		max-height: 250px;
+		border-radius: 10px;
+		overflow: hidden;
+	}
+	.card #profile_img img {
 		mask-image: unset;
 		object-position: center;
 	}
@@ -210,4 +222,33 @@ hr {
 }
 .card .info .contact-info a:hover {
 	color: #007BFF;
+}
+
+
+
+.badges {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 5px;
+	font-size: 0.55em;
+}
+.badge {
+	background: #e5efff;
+	padding: 4px 10px;
+	border-radius: 12px;
+	display: flex;
+	gap: 3px;
+	align-items: center;
+	user-select: none;
+}
+.badge[href] {
+	text-decoration: none;
+	color: black;
+	cursor: pointer;
+	transition: 0.2s;
+}
+.badge[href]:hover {
+	background: #c6dcff;
 }

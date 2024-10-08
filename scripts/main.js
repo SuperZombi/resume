@@ -2,6 +2,9 @@ window.onload = _=> {
 	document.querySelectorAll("[anim]").forEach(el=>{
 		new Animate(el)
 	})
+	document.querySelectorAll(".badge").forEach(el=>{
+		asLink(el)
+	})
 }
 
 class Animate {
@@ -18,4 +21,9 @@ class Animate {
 		});
 		observer.observe(el);
 	}
+}
+
+function asLink(element){
+	element.href = `https://www.google.com/search?q=${element.innerText}`
+	element.target = "_blank"
 }
