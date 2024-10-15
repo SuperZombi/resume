@@ -9,7 +9,7 @@ body {
 	background-color: #f0f0f0;
 }
 
-:root{
+* {
 	scroll-behavior: smooth;
 }
 ::-webkit-scrollbar {
@@ -69,6 +69,9 @@ hr {
 	width: 100%;
 	scroll-snap-type: y mandatory;
 	overflow: auto;
+}
+.cards.scroll-disabled {
+	scroll-snap-type: none;
 }
 .card-wrapper {
 	height: 100dvh;
