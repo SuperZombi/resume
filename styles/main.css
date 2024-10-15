@@ -95,7 +95,25 @@ hr {
 	display: flex;
 	flex-direction: column;
 	font-size: 18pt;
+	overflow: hidden;
+	position: relative;
 }
+
+.card .corner {
+	background: #337ab7;
+	color: white;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 1;
+	display: flex;
+	padding: 10px;
+	font-size: 1.25rem;
+	cursor: pointer;
+	border-radius: 0 0 0 20px;
+	text-decoration: none;
+}
+
 .card > .card-layout {
 	display: flex;
 	flex-direction: row;
@@ -183,6 +201,9 @@ hr {
 		overflow: hidden;
 		font-size: 16pt;
 		gap: 0.25em;
+	}
+	.card .corner {
+		font-size: 1rem;
 	}
 	.card > .card-layout {
 		display: contents;
