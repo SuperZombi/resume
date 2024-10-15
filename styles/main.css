@@ -148,6 +148,14 @@ hr {
 	color: #757575;
 	margin: 0;
 }
+.card .info h1 a {
+	color: initial;
+	text-decoration: none;
+	cursor: pointer;
+}
+.card .info h1 a:hover {
+	text-decoration: underline;
+}
 .card .info p {
 	font-size: 0.65em;
 	margin: 0;
