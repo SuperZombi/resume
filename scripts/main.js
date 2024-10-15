@@ -32,29 +32,28 @@ function asLink(element){
 }
 
 
-function smoothScroll(element, targetPosition){
+function smoothScroll(targetPosition){
 	return new Promise((resolve, _) => {
 		const scrollHandler = () => {
-			if (Math.round(element.scrollTop) == targetPosition) {
-				element.removeEventListener("scroll", scrollHandler);
+			if (Math.round(window.scrollY) == targetPosition) {
+				document.removeEventListener("scroll", scrollHandler);
 				resolve();
 			}
 		};
-		if (element.scrollTop == targetPosition) {
+		if (window.scrollY == targetPosition) {
 			resolve();
 		} else {
-			element.addEventListener("scroll", scrollHandler);
-			element.scrollTo(0, targetPosition)
+			document.addEventListener("scroll", scrollHandler);
+			window.scrollTo(0, targetPosition)
 		}
 	});
 }
 async function animatedScroll(){
-	let container = document.querySelector(".cards")
-	if (container.scrollTop > 0){}
+	if (window.scrollY > 0){}
 	else{
-		container.classList.add("scroll-disabled")
-		await smoothScroll(container, 50)
-		await smoothScroll(container, 0)
-		container.classList.remove("scroll-disabled")
+		document.documentElement.classList.add("scroll-disabled")
+		await smoothScroll(50)
+		await smoothScroll(0)
+		document.documentElement.classList.remove("scroll-disabled")
 	}
 }
