@@ -1,4 +1,3 @@
-initTheme()
 window.onload = _=> {
 	document.querySelectorAll("[anim]").forEach(el=>{
 		new Animate(el)
@@ -30,32 +29,6 @@ class Animate {
 function asLink(element){
 	element.href = `https://www.google.com/search?q=${element.innerText}`
 	element.target = "_blank"
-}
-
-
-function initTheme(){
-	function changeTheme(theme){
-		document.documentElement.setAttribute("theme", theme);
-	}
-	if (['#dark', '#light'].includes(window.location.hash)){
-		if (window.location.hash == "#dark"){
-			changeTheme("dark")
-		}
-		else if (window.location.hash == "#light") {
-			changeTheme("light")
-		}
-	}
-	else {
-		if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-			changeTheme("dark")
-		}
-		window.matchMedia("(prefers-color-scheme: dark)").onchange = event=>{
-			event.matches ? changeTheme("dark") : changeTheme("light")
-		}
-	}
-	window.addEventListener('hashchange', event=>{
-		initTheme()
-	});
 }
 
 
