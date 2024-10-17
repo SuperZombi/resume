@@ -112,6 +112,10 @@ hr {
 	cursor: pointer;
 	border-radius: 0 0 0 20px;
 	text-decoration: none;
+	transition: 0.25s;
+}
+.card .corner:hover {
+	background: #3387d0;
 }
 
 .card > .card-layout {
@@ -169,7 +173,7 @@ hr {
 	margin: 0;
 }
 .card .info h1 a {
-	color: initial;
+	color: black;
 	text-decoration: none;
 	cursor: pointer;
 }
@@ -249,10 +253,11 @@ hr {
 	color: #333;
 	font-size: 1em;
 	text-decoration: none;
-	transition: 0.2s;
+	transition: 0.25s;
 }
 .card .info .contact-info a:hover {
 	color: #007BFF;
+	transform: translateY(-4px);
 }
 
 
@@ -268,6 +273,7 @@ hr {
 .badge {
 	print-color-adjust: exact;
 	-webkit-print-color-adjust: exact;
+	color: black;
 	background: #e5efff;
 	padding: 4px 10px;
 	border-radius: 12px;
@@ -278,10 +284,57 @@ hr {
 }
 .badge[href] {
 	text-decoration: none;
-	color: black;
 	cursor: pointer;
-	transition: 0.2s;
+	transition: 0.25s;
 }
 .badge[href]:hover {
 	background: #c6dcff;
+	transform: translateY(-2px);
+}
+
+
+
+@media (prefers-color-scheme: dark) {
+	body {
+		color: white;
+		background-color: #25282a;
+	}
+	.card {
+		background-color: #1c1e20;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+	}
+	::-webkit-scrollbar-thumb {
+		background-color: #454a4d;
+	}
+	::-webkit-scrollbar-thumb:hover {
+		background-color: #676e73;
+	}
+	.card .info .contact-info a {
+		color: lightgrey;
+	}
+	.card .info .contact-info a:hover {
+		color: #006edc;
+	}
+	hr {
+		background-image: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.25), transparent);
+	}
+	.card .corner {
+		background: #296292;
+	}
+	.card .corner:hover {
+		background: #337ab7;
+	}
+	.card .info h1 a {
+		color: white;
+	}
+	.card .info h2 {
+		color: darkgrey;
+	}
+	.badge {
+		background: #1e2332;
+		color: lightgrey;
+	}
+	.badge[href]:hover {
+		background: #283c5a;
+	}
 }
