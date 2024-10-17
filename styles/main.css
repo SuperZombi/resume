@@ -294,7 +294,7 @@ hr {
 
 
 
-@media (prefers-color-scheme: dark) {
+[theme="dark"] {
 	body {
 		color: white;
 		background-color: #25282a;
