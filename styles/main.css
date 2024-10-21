@@ -108,7 +108,7 @@ hr {
 	z-index: 1;
 	display: flex;
 	padding: 10px;
-	font-size: 1.25rem;
+	font-size: 0.8em;
 	cursor: pointer;
 	border-radius: 0 0 0 20px;
 	text-decoration: none;
@@ -205,9 +205,6 @@ hr {
 		overflow: hidden;
 		font-size: 16pt;
 		gap: 0.25em;
-	}
-	.card .corner {
-		font-size: 1rem;
 	}
 	.card > .card-layout {
 		display: contents;
