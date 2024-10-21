@@ -96,6 +96,7 @@ hr {
 	font-size: 18pt;
 	overflow: hidden;
 	position: relative;
+	text-wrap: balance;
 }
 
 .card .corner {
@@ -269,9 +270,8 @@ hr {
 }
 .footer .close {
 	position: absolute;
-	right: 0;
-	top: 0;
-	padding: 5px;
+	right: 8px;
+	top: 5px;
 	transition: 0.25s;
 	cursor: pointer;
 	user-select: none;

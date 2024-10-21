@@ -9,6 +9,8 @@ window.onload = _=> {
 		animatedScroll()
 	}, 3000)
 	if (window.location.search == "?true"){
+		let link = document.querySelector("a.corner")
+		link.href = link.href + "?true"
 		initFooter()
 	}
 }
