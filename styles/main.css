@@ -31,7 +31,6 @@ html.scroll-disabled {
 	background-color: #a8bbbf;
 }
 
-@media print{@page {size: landscape}}
 
 hr {
 	border: 0;
@@ -192,6 +191,96 @@ hr {
 	width: 5px;
 }
 
+.card .info .contact-info {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	gap: 1em;
+}
+.card .info .contact-info a {
+	color: #333;
+	font-size: 1em;
+	text-decoration: none;
+	transition: 0.25s;
+}
+.card .info .contact-info a:hover {
+	color: #007BFF;
+	transform: translateY(-4px);
+}
+
+
+.badges {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 5px;
+	font-size: 0.55em;
+}
+.badge {
+	print-color-adjust: exact;
+	-webkit-print-color-adjust: exact;
+	color: black;
+	background: #e5efff;
+	padding: 4px 10px;
+	border-radius: 12px;
+	display: flex;
+	gap: 3px;
+	align-items: center;
+	user-select: none;
+}
+.badge[href] {
+	text-decoration: none;
+	cursor: pointer;
+	transition: 0.25s;
+}
+.badge[href]:hover {
+	background: #c6dcff;
+	transform: translateY(-2px);
+}
+
+
+
+.footer {
+	background-color: rgb(50, 50, 50, 0.85);
+	color: white;
+	text-align: center;
+	padding: 0.75em;
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	transition: 0.5s;
+}
+.footer.hide {
+	transform: translateY(100%);
+}
+.footer h2 {
+	margin: 0;
+	font-size: 1.2em;
+	text-wrap: balance;
+}
+.footer .timer {
+	font-size: 1.25em;
+	font-weight: bold;
+	color: #FFD700;
+	margin-top: 0.5em;
+	user-select: none;
+}
+.footer .close {
+	position: absolute;
+	right: 0;
+	top: 0;
+	padding: 5px;
+	transition: 0.25s;
+	cursor: pointer;
+	user-select: none;
+}
+.footer .close:hover {
+	transform: rotate(90deg);
+}
+
+
 
 @media (max-width: 600px) {
 	::-webkit-scrollbar {
@@ -229,6 +318,12 @@ hr {
 		height: calc(100% - 250px);
 		flex-basis: unset;
 	}
+	.footer {
+		font-size: 0.9em;
+	}
+	.footer .timer {
+		margin-top: 0.3em;
+	}
 }
 
 @media (max-height: 500px) {
@@ -239,54 +334,18 @@ hr {
 	}
 }
 
-
-.card .info .contact-info {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	gap: 1em;
-}
-.card .info .contact-info a {
-	color: #333;
-	font-size: 1em;
-	text-decoration: none;
-	transition: 0.25s;
-}
-.card .info .contact-info a:hover {
-	color: #007BFF;
-	transform: translateY(-4px);
-}
-
-
-
-.badges {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: center;
-	gap: 5px;
-	font-size: 0.55em;
-}
-.badge {
-	print-color-adjust: exact;
-	-webkit-print-color-adjust: exact;
-	color: black;
-	background: #e5efff;
-	padding: 4px 10px;
-	border-radius: 12px;
-	display: flex;
-	gap: 3px;
-	align-items: center;
-	user-select: none;
-}
-.badge[href] {
-	text-decoration: none;
-	cursor: pointer;
-	transition: 0.25s;
-}
-.badge[href]:hover {
-	background: #c6dcff;
-	transform: translateY(-2px);
+@media print{
+	@page {size: landscape}
+	.card {
+		border: 1px solid grey;
+		box-shadow: none;
+	}
+	.card .corner {
+		display: none;
+	}
+	.footer {
+		display: none;
+	}
 }
 
 

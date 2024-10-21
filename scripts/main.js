@@ -8,6 +8,9 @@ window.onload = _=> {
 	setTimeout(()=>{
 		animatedScroll()
 	}, 3000)
+	if (window.location.search == "?true"){
+		initFooter()
+	}
 }
 
 class Animate {
@@ -55,5 +58,49 @@ async function animatedScroll(){
 		await smoothScroll(50)
 		await smoothScroll(0)
 		document.documentElement.classList.remove("scroll-disabled")
+	}
+}
+
+function initFooter(){
+	document.querySelector(".footer .close").onclick = _=>{
+		document.querySelector(".footer").classList.add("hide")
+	}
+	const scrollHandlerForFooter = () => {
+		if (
+			(window.innerHeight + window.scrollY) >= (document.body.scrollHeight - 100)
+		){
+			document.querySelector(".footer").classList.remove("hide")
+			document.removeEventListener("scroll", scrollHandlerForFooter);
+		}
+	}
+
+	let currentTime = Math.floor(Date.now() / 1000);
+	let expiresTime = localStorage.getItem('expiresTime');
+	if (!expiresTime) {
+		expiresTime = currentTime + (60 * 60 * 24)
+		localStorage.setItem('expiresTime', expiresTime);
+	}
+
+	if (expiresTime > currentTime){
+		startTimer(expiresTime, document.querySelector(".footer .timer"))
+		document.addEventListener("scroll", scrollHandlerForFooter);
+	}
+
+	function startTimer(expirationTime, display) {
+		function timeToStr(totalSeconds){
+			let hours = Math.floor(totalSeconds / 3600).toString().padStart(2, '0')
+			let minutes = Math.floor((totalSeconds % 3600) / 60).toString().padStart(2, '0')
+			let seconds = (totalSeconds % 60).toString().padStart(2, '0')
+			return `${hours}:${minutes}:${seconds}`
+		}
+
+		let interval = setInterval(_=>{
+			let currentTime = Math.floor(Date.now() / 1000);
+			let remaining = expirationTime - currentTime;
+			display.innerHTML = timeToStr(remaining);
+			if (remaining <= 0){
+				clearInterval(interval)
+			}
+		}, 1000)
 	}
 }
