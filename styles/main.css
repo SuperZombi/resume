@@ -243,6 +243,7 @@ hr {
 
 .list {
 	display: table;
+	margin-top: 5px;
 	--border-radius: 10px;
 }
 .list span {
