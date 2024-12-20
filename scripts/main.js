@@ -8,6 +8,11 @@ window.onload = _=> {
 	setTimeout(()=>{
 		animatedScroll()
 	}, 3000)
+	document.addEventListener("scroll", _=>{
+		if (window.scrollY > window.innerHeight){
+			document.querySelector("#scroll-down").style.display = "none"
+		}
+	});
 	if (window.location.search == "?true"){
 		let link = document.querySelector("a.corner")
 		link.href = link.href + "?true"

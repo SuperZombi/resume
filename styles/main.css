@@ -69,6 +69,11 @@ hr {
 	}
 }
 
+#scroll-down {
+	position: absolute;
+	bottom: 2.5%;
+	font-size: 30px;
+}
 
 .card-wrapper {
 	height: 100dvh;
@@ -322,6 +327,9 @@ hr {
 		width: auto;
 		max-width: 4px;
 	}
+	#scroll-down {
+		font-size: 20px;
+	}
 	.card {
 		width: 95dvw;
 		height: fit-content;
@@ -365,6 +373,10 @@ hr {
 }
 
 @media (max-height: 500px) {
+	#scroll-down {
+		bottom: 0;
+		font-size: 20px;
+	}
 	.card {
 		max-height: 95dvh;
 		width: auto;
@@ -374,6 +386,7 @@ hr {
 
 @media print{
 	@page {size: landscape}
+	#scroll-down { display: none; }
 	.card {
 		border: 1px solid grey;
 		box-shadow: none;
