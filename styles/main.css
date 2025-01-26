@@ -221,7 +221,8 @@ hr {
 	flex-wrap: wrap;
 	justify-content: center;
 	gap: 5px;
-	font-size: 0.55em;
+	font-size: 0.6em;
+	line-height: 1;
 }
 .badge {
 	print-color-adjust: exact;
@@ -231,7 +232,7 @@ hr {
 	padding: 4px 10px;
 	border-radius: 12px;
 	display: flex;
-	gap: 3px;
+	gap: 4px;
 	align-items: center;
 	user-select: none;
 }
@@ -239,10 +240,41 @@ hr {
 	text-decoration: none;
 	cursor: pointer;
 	transition: 0.25s;
+	--brand-color: #3080ff;
 }
 .badge[href]:hover {
-	background: #c6dcff;
 	transform: translateY(-2px);
+	background: color-mix(in srgb, var(--brand-color) 25%, transparent);
+	color: var(--brand-color);
+}
+
+.badge:has(i.fa-html5){
+	--brand-color: #f16524;
+}
+.badge:has(i.fa-square-js){
+	--brand-color: #f7e018;
+}
+.badge:has(i.fa-bolt){
+	--brand-color: #0d9c8f;
+}
+.badge:has(i.fa-bootstrap){
+	--brand-color: #9308ff;
+}
+.badge:has(i.fa-film){
+	--brand-color: #01bb29;
+}
+.badge:has(i.fa-react){
+	--brand-color: #00d2f7;
+}
+.badge:hover .fa-python{
+	background: linear-gradient(to bottom right, #377ef0 50%, #f7c63d 50%);
+	background-clip: text;
+	color: transparent;
+}
+.badge:hover .fa-puzzle-piece{
+	background: conic-gradient(from 45deg at 43% 56%, #ea4335 0% 25%, #fbbc04 25% 50%, #34a853 50% 75%, #4285f4 75% 100%);
+	background-clip: text;
+	color: transparent;
 }
 
 
@@ -440,8 +472,5 @@ hr {
 	.badge {
 		background: #1e2332;
 		color: lightgrey;
-	}
-	.badge[href]:hover {
-		background: #283c5a;
 	}
 }
