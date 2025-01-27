@@ -86,6 +86,7 @@ hr {
 }
 
 .card {
+	--card-color: white;
 	height: 100%;
 	width: 75dvw;
 	max-width: 1000px;
@@ -93,7 +94,7 @@ hr {
 	box-sizing: border-box;
 	padding: 10px;
 	border-radius: 20px;
-	background-color: white;
+	background-color: var(--card-color);
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 	text-align: center;
 	display: flex;
@@ -166,6 +167,8 @@ hr {
 .card hr {
 	margin: 0;
 	flex-shrink: 0;
+	print-color-adjust: exact;
+	-webkit-print-color-adjust: exact;
 }
 .card .info h1 {
 	padding-top: 0.25em;
@@ -185,15 +188,40 @@ hr {
 .card .info h1 a:hover {
 	text-decoration: underline;
 }
-.card .info p {
+
+.card .scroll-container {
+	position: relative;
 	font-size: 0.65em;
-	margin: 0;
+	overflow: hidden;
+	margin: -0.75em 0;
+}
+.card .scroll-container:before,
+.card .scroll-container:after {
+	content: '';
+	width: 100%;
+	height: 1em;
+	position:absolute;
+	left:0;right:0;
+}
+.card .scroll-container:before {
+	top:0;
+	background: linear-gradient(to bottom, var(--card-color), transparent);
+}
+.card .scroll-container:after {
+	bottom:0;
+	background: linear-gradient(to top, var(--card-color), transparent);
+}
+
+.card .scroll-container .scroll-content {
 	display: flex;
 	flex-direction: column;
 	gap: 0.5em;
 	overflow: auto;
+	height: 100%;
+	padding: 0.75em 0;
+	box-sizing: border-box;
 }
-.card .info p::-webkit-scrollbar {
+.card .scroll-container .scroll-content::-webkit-scrollbar {
 	width: 5px;
 }
 
@@ -418,6 +446,7 @@ hr {
 
 @media print{
 	@page {size: landscape}
+	body {background: #fff}
 	#scroll-down { display: none; }
 	.card {
 		border: 1px solid grey;
@@ -429,6 +458,13 @@ hr {
 	.footer {
 		display: none;
 	}
+	.card #profile_img img {
+		mask: none;
+	}
+	.card .scroll-container:before,
+	.card .scroll-container:after {
+		background: transparent;
+	}
 }
 
 
@@ -439,7 +475,7 @@ hr {
 		background-color: #25282a;
 	}
 	.card {
-		background-color: #1c1e20;
+		--card-color: #1c1e20;
 		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
 	}
 	::-webkit-scrollbar-thumb {
