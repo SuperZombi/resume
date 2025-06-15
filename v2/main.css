@@ -51,8 +51,6 @@ body {
 	align-items: center;
 	font-size: 0.85rem;
 	line-height: 0.85rem;
-	print-color-adjust: exact;
-	-webkit-print-color-adjust: exact;
 }
 
 .content{
@@ -98,7 +96,7 @@ body {
 	width: 10px;
 	border-radius: 50%;
 	position: absolute;
-	transform: translateX(-50%);
+	transform: translateX(calc(-50% - 1px));
 	print-color-adjust: exact;
 	-webkit-print-color-adjust: exact;
 }
@@ -140,5 +138,9 @@ body {
 	}
 	.page{
 		flex-direction: column;
+	}
+	.tags span{
+		background: none;
+		border: 1px solid gray;
 	}
 }
