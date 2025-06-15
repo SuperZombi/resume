@@ -49,6 +49,8 @@ body {
 	align-items: center;
 	font-size: 0.85rem;
 	line-height: 0.85rem;
+	print-color-adjust: exact;
+	-webkit-print-color-adjust: exact;
 }
 
 .content{
@@ -57,6 +59,8 @@ body {
 .content h3{
 	border-bottom: 2px solid lightgray;
 	padding-bottom: 10px;
+	margin-top: 0;
+	padding-top: 1rem;
 }
 
 
@@ -77,6 +81,8 @@ body {
 	border-radius: 50%;
 	position: absolute;
 	transform: translateX(-50%);
+	print-color-adjust: exact;
+	-webkit-print-color-adjust: exact;
 }
 .timeline-item .timeline-data{
 	padding-left: 20px;
@@ -90,6 +96,9 @@ body {
 .timeline-item .title{
 	font-weight: bold;
 }
+.category{
+	break-inside: avoid;
+}
 
 
 @media (max-width: 800px) {
@@ -99,5 +108,13 @@ body {
 	}
 	.page{
 		flex-direction: column;
+	}
+}
+@media print {
+	body {
+		padding: 0;
+		margin: 0;
+		font-family: sans-serif;
+		background-color: white;
 	}
 }
