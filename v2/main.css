@@ -1,17 +1,19 @@
+* {
+	box-sizing: border-box;
+}
 body {
 	padding: 0;
 	margin: 0;
 	font-family: sans-serif;
 	background-color: #f0f0f0;
 }
-*{
-	box-sizing: border-box;
-}
+
 .page {
 	background: white;
-	max-width: 1000px;
-	margin: auto;
+	max-width: min(1000px, 96vw);
+	margin: 1rem auto;
 	display: flex;
+	border-radius: 12px;
 }
 .side{
 	width: 35%;
@@ -112,9 +114,6 @@ body {
 }
 @media print {
 	body {
-		padding: 0;
-		margin: 0;
-		font-family: sans-serif;
 		background-color: white;
 	}
 }
