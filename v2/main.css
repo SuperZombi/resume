@@ -83,6 +83,13 @@ body {
 	display: flex;
 	flex-direction: column;
 }
+.timeline-item .date{
+	font-family: monospace;
+	font-size: 1rem;
+}
+.timeline-item .title{
+	font-weight: bold;
+}
 
 
 @media (max-width: 800px) {
