@@ -59,6 +59,8 @@ body {
 .flex-center {
 	display: flex;
 	justify-content: center;
+	flex-wrap: wrap;
+	gap: 8px;
 }
 button {
 	padding: 0.5em 1.5em;
@@ -78,6 +80,9 @@ button:hover {
 }
 button:active {
 	background: #006dd8;
+}
+a:has(button){
+	text-decoration: none;
 }
 
 .content{
