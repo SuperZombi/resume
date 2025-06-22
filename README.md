@@ -1,3 +1,3 @@
-### [Pretty resume](https://superzombi.github.io/resume/?true)
+### ✨ [Pretty resume](https://superzombi.github.io/resume/?true)
 
-### [Formal Resume](https://superzombi.github.io/resume/v2/)
+### 💼 [Formal resume](https://superzombi.github.io/resume/v2/)
