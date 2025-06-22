@@ -17,9 +17,13 @@ body {
 }
 .side{
 	width: 40%;
+	border-right: 2px solid lightgray;
+}
+.sticky{
+	position: sticky;
+	top: 0;
 	padding: 10px;
 	text-align: center;
-	border-right: 2px solid lightgray;
 }
 
 .links{
