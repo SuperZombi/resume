@@ -137,10 +137,7 @@ button:active {
 	transform: translateY(-2.5px);
 }
 .timeline-item:hover{
-	border-color: gray;
-}
-.timeline-item:hover::before{
-	background: gray;
+	--timeline-color: gray;
 }
 .timeline-item .date{
 	font-family: monospace;
@@ -183,5 +180,17 @@ button:active {
 	.tags span{
 		background: none;
 		border: 1px solid gray;
+	}
+}
+@media screen and (prefers-color-scheme: dark) {
+	body {
+		color: #e3e3e3;
+		background: #292929;
+	}
+	.page {
+		background: #1e1e1e;
+	}
+	.links a{
+		color: lightgray;
 	}
 }
