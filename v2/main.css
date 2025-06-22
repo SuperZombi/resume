@@ -56,6 +56,29 @@ body {
 	font-size: 0.85rem;
 	line-height: 0.85rem;
 }
+.flex-center {
+	display: flex;
+	justify-content: center;
+}
+button {
+	padding: 0.5em 1.5em;
+	border: transparent;
+	box-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+	background: dodgerblue;
+	color: white;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: 0.2s ease;
+	display: flex;
+	align-items: center;
+	gap: 0.5em;
+}
+button:hover {
+	background: #0081ff;
+}
+button:active {
+	background: #006dd8;
+}
 
 .content{
 	padding: 20px;
@@ -135,6 +158,12 @@ body {
 @media print {
 	body {
 		background-color: white;
+	}
+	.hide-on-print{
+		display: none;
+	}
+	.sticky{
+		position: static;
 	}
 	.side{
 		width: 100%;
