@@ -68,12 +68,13 @@ button {
 	box-shadow: 1px 1px 3px rgba(0,0,0,0.4);
 	background: dodgerblue;
 	color: white;
-	border-radius: 4px;
+	border-radius: 5px;
 	cursor: pointer;
 	transition: 0.2s ease;
 	display: flex;
 	align-items: center;
 	gap: 0.5em;
+	user-select: none;
 }
 button:hover {
 	background: #0081ff;
@@ -109,6 +110,9 @@ a:has(button){
 }
 .content a:hover{
 	text-decoration: underline;
+}
+.content img{
+	user-select: none;
 }
 
 .timeline-item{
