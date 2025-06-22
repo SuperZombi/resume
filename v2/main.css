@@ -112,6 +112,7 @@ button:active {
 	position: relative;
 	padding-bottom: 1rem;
 	margin-left: 10px;
+	transition: 0.2s ease;
 }
 .timeline-item:last-child{
 	padding-bottom: 0;
@@ -126,6 +127,7 @@ button:active {
 	transform: translateX(calc(-50% - 1px));
 	print-color-adjust: exact;
 	-webkit-print-color-adjust: exact;
+	transition: 0.2s ease;
 }
 .timeline-item .timeline-data{
 	padding-left: 20px;
@@ -133,6 +135,12 @@ button:active {
 	flex-direction: column;
 	gap: 5px;
 	transform: translateY(-2.5px);
+}
+.timeline-item:hover{
+	border-color: gray;
+}
+.timeline-item:hover::before{
+	background: gray;
 }
 .timeline-item .date{
 	font-family: monospace;
