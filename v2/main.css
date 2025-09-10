@@ -47,7 +47,8 @@ body {
 }
 .tags span{
 	color: #333;
-	background: #e5efff;
+	background: rgb(229, 239, 255, 0.5);
+	border: 1px solid #e5efff;
 	padding: 4px 10px;
 	border-radius: 12px;
 	display: inline-flex;
@@ -68,7 +69,7 @@ button {
 	box-shadow: 1px 1px 3px rgba(0,0,0,0.4);
 	background: dodgerblue;
 	color: white;
-	border-radius: 5px;
+	border-radius: 6px;
 	cursor: pointer;
 	transition: 0.2s ease;
 	display: flex;
@@ -196,10 +197,18 @@ a:has(button){
 		color: #e3e3e3;
 		background: #292929;
 	}
+	button {
+		background: rgb(30, 144, 255, 0.3);
+		border: 1px solid dodgerblue;
+	}
 	.page {
 		background: #1e1e1e;
 	}
 	.links a{
 		color: lightgray;
+	}
+	.tags span{
+		color: #e5efff;
+		background: rgb(229, 239, 255, 0.2);
 	}
 }
