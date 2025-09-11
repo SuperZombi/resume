@@ -86,6 +86,10 @@ button:active {
 a:has(button){
 	text-decoration: none;
 }
+hr {
+	border-style: solid;
+	border-color: lightgray;
+}
 
 .content{
 	padding: 20px;
@@ -210,5 +214,9 @@ a:has(button){
 	.tags span{
 		color: #e5efff;
 		background: rgb(229, 239, 255, 0.2);
+	}
+	.content h3,
+	.side, hr {
+		border-color: darkgray;
 	}
 }
