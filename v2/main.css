@@ -173,6 +173,9 @@ hr {
 	.page{
 		flex-direction: column;
 	}
+	.content {
+		padding-top: 0;
+	}
 }
 @media print {
 	body {
@@ -184,12 +187,28 @@ hr {
 	.sticky{
 		position: static;
 	}
+	.page{
+		flex-direction: column;
+	}
+	.links {
+		display: grid;
+		grid-template-rows: 1fr 1fr;
+		grid-template-columns: 1fr 1fr;
+		justify-items: center;
+		width: fit-content;
+		margin: auto;
+		gap: 0.5rem 2rem;
+	}
 	.side{
 		width: 100%;
 		border-right: 0;
 	}
-	.page{
-		flex-direction: column;
+	.content {
+		padding-top: 0;
+	}
+	.tags {
+		width: 65%;
+		margin: auto;
 	}
 	.tags span{
 		background: none;
