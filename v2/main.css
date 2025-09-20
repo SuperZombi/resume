@@ -27,14 +27,22 @@ body {
 }
 
 .links{
-	display: flex;
+	display: inline-flex;
 	flex-direction: column;
 	gap: 0.5rem;
 	white-space: nowrap;
+	text-align: left;
 }
 .links a{
 	text-decoration: none;
 	color: #444;
+	display: grid;
+	grid-template-columns: 20px 1fr;
+	align-items: center;
+	gap: 5px;
+}
+.links i{
+	justify-self: center;
 }
 .links a:hover span{
 	text-decoration: underline;
@@ -192,12 +200,11 @@ hr {
 	}
 	.links {
 		display: grid;
-		grid-template-rows: 1fr 1fr;
-		grid-template-columns: 1fr 1fr;
-		justify-items: center;
+		grid-template-rows: 1fr 1fr 1fr;
+		grid-auto-flow: column;
 		width: fit-content;
 		margin: auto;
-		gap: 0.5rem 2rem;
+		gap: 0.5rem 3rem;
 	}
 	.side{
 		width: 100%;
