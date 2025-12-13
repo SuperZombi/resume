@@ -1,0 +1,57 @@
+body{
+	background: #eee;
+	font-family: sans-serif;
+}
+.card{
+	background: white;
+	border-radius: 12px;
+	padding: 1rem;
+	max-width: 800px;
+	margin: auto;
+}
+.links{
+	display: inline-grid;
+	grid-template-columns: 24px 1fr;
+	gap: 0.5rem;
+	text-align: left;
+}
+.links i{
+	justify-self: center;
+}
+table{
+	border-collapse: collapse;
+	margin: auto;
+}
+table tr:not(:last-child){
+	border-bottom: 1px solid;
+}
+table td{
+	padding: 5px 10px;
+	text-align: center;
+}
+.item{
+	text-align: center;
+}
+.item-header{
+	font-size: 1.25rem;
+	margin-bottom: 0.25rem;
+	font-weight: bold;
+}
+.item-sub{
+	margin-bottom: 0.2rem;
+	font-weight: bold;
+}
+.list-center {
+	text-align: center;
+	margin-left: 1rem;
+}
+.list-center ul{
+	display: inline-block;
+	text-align: left;
+	padding-left: 0;
+}
+@media print {
+	body {
+		background-color: white;
+	}
+}
