@@ -87,6 +87,7 @@ button {
 }
 button:hover {
 	background: #0081ff;
+	padding: 0.5em 2em;
 }
 button:active {
 	background: #006dd8;
