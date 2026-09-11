@@ -2,6 +2,10 @@ body{
 	background: #eee;
 	font-family: sans-serif;
 }
+.summary-header {
+	text-wrap: balance;
+	line-height: 1.4rem;
+}
 .card{
 	background: white;
 	border-radius: 12px;
@@ -35,6 +39,9 @@ table td{
 	font-size: 1.25rem;
 	margin-bottom: 0.25rem;
 	font-weight: bold;
+}
+.item-body{
+	margin-top: 1rem;
 }
 .item-sub{
 	margin-bottom: 0.2rem;
