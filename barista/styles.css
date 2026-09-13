@@ -40,7 +40,7 @@ table{
 	margin: auto;
 }
 table tr:not(:last-child){
-	border-bottom: 1px solid gray;
+	border-bottom: 1px solid lightgray;
 }
 table td{
 	padding: 5px 10px;
