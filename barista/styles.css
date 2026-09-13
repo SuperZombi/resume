@@ -1,6 +1,20 @@
+html, body{
+	margin: 0;
+	padding: 0;
+}
 body{
 	background: #eee;
 	font-family: sans-serif;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 1rem;
+	height: 100dvh;
+}
+hr {
+	border: none;
+	height: 1px;
+	background: lightgray;
 }
 .summary-header {
 	text-wrap: balance;
@@ -8,8 +22,8 @@ body{
 }
 .card{
 	background: white;
-	border-radius: 12px;
-	padding: 1rem;
+	border-radius: 1rem;
+	padding: 1rem 2rem;
 	max-width: 800px;
 	margin: auto;
 }
@@ -64,8 +78,35 @@ table td{
 	font-size: 0.85rem;
 	color: #666;
 }
+button {
+	padding: 0.5em 1.5em;
+	border: transparent;
+	box-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+	background: dodgerblue;
+	color: white;
+	border-radius: 6px;
+	cursor: pointer;
+	transition: 0.2s ease;
+	display: flex;
+	align-items: center;
+	gap: 0.5em;
+	user-select: none;
+}
+button:hover {
+	background: #0081ff;
+	padding: 0.5em 2em;
+}
+button:active {
+	background: #006dd8;
+}
 @media print {
 	body {
 		background-color: white;
+	}
+	.card {
+		border: 1px solid lightgray;
+	}
+	.hide-on-print{
+		display: none;
 	}
 }

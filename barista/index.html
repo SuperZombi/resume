@@ -15,18 +15,18 @@
 			<a><i class="fa-solid fa-location-dot"></i>Cork, Ireland</a>
 		</div>
 		<hr>
-		<h3 align="center"><i class="fa-solid fa-circle-user"></i> Summary</h3>
+		<!-- <h3 align="center"><i class="fa-solid fa-circle-user"></i> Summary</h3> -->
 		<p align="center" class="summary-header">
 			Motivated and reliable barista looking for a position in a coffee shop or cafe.
 			<br>
 			Friendly with customers, quick learner, and able to work in a fast-paced environment.
 		</p>
-		<p align="center">
+		<!-- <p align="center">
 			Work permit: Yes (Stamp 4)
-		</p>
+		</p> -->
 		<hr>
 		
-		<h3 align="center"><i class="fa-solid fa-briefcase"></i> Experience</h3>
+		<!-- <h3 align="center"><i class="fa-solid fa-briefcase"></i> Experience</h3>
 		<div class="item">
 			<div class="item-header">Shop Assistant / Warehouse Assistant</div>
 			<div class="item-sub">Retail Warehouse, Ukraine</div>
@@ -42,7 +42,7 @@
 				</ul>
 			</div>
 		</div>
-		<hr>
+		<hr> -->
 
 		<h3 align="center"><i class="fa-solid fa-award"></i> Certifications</h3>
 		<div class="list-center">
@@ -54,7 +54,7 @@
 		</div>
 		<hr>
 
-		<h3 align="center"><i class="fa-solid fa-clock"></i> Availability</h3>
+		<!-- <h3 align="center"><i class="fa-solid fa-clock"></i> Availability</h3>
 		<div class="list-center">
 			<ul>
 				<li>Monday – Friday: from 9:00</li>
@@ -64,7 +64,7 @@
 		<p align="center">
 			Work scheme: part-time / full-time
 		</p>
-		<hr>
+		<hr> -->
 
 		<h3 align="center"><i class="fa-solid fa-earth-americas"></i> Languages</h3>
 		<table>
@@ -82,5 +82,25 @@
 			</tr>
 		</table>
 	</div>
+
+	<p align="center" class="hide-on-print">
+		<button onclick="printCard()">Print</button>
+	</p>
+	<script>
+		function printCard() {
+			const card = document.querySelector('.card');
+
+			const clone = card.cloneNode(true);
+			clone.id = 'cardClone';
+			document.body.appendChild(clone);
+
+			window.print();
+
+			setTimeout(() => {
+				const c = document.getElementById('cardClone');
+				if (c) c.remove();
+			}, 500);
+		}
+	</script>
 </body>
 </html>
