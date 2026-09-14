@@ -44,7 +44,7 @@ body {
 .links i{
 	justify-self: center;
 }
-.links a:hover span{
+.links a[href]:hover span{
 	text-decoration: underline;
 }
 .tags {

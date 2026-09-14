@@ -34,7 +34,13 @@ hr {
 .links a{
 	display: flex;
 	gap: 5px;
+	text-decoration: none;
+	color: inherit;
 }
+.links a[href]:hover span{
+	text-decoration: underline;
+}
+
 table{
 	border-collapse: collapse;
 	margin: auto;
